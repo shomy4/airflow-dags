@@ -13,7 +13,7 @@ def process(p1):
     print(p1)
     return 'done'
 
-with DAG(dag_id='parallel_dag2', schedule_interval='0 0 * * *', default_args=default_args, catchup=False) as dag:
+with DAG(dag_id='parallel_dag3', schedule_interval='0 0 * * *', default_args=default_args, catchup=False) as dag:
     
     tasks = [BashOperator(task_id='task_{0}'.format(t), bash_command='sleep 60'.format(t)) for t in range(1, 4)]
 
